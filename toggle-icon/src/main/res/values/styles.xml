@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ToggleIcon">
+        <attr name="checkedTint" format="color"/>
+        <attr name="uncheckedTint" format="color"/>
+        <attr name="checkedResource" format="reference"/>
+        <attr name="uncheckedResource" format="reference"/>
+        <attr name="checked"/>
+        <attr name="hasRipple" format="boolean"/>
+    </declare-styleable>
+</resources>
