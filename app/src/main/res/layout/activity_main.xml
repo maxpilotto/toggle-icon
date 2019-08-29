@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <com.maxpilotto.toggleicon.ToggleIcon
+            android:id="@+id/toggle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:uncheckedResource="@drawable/eye_off"
+            app:checkedResource="@drawable/eye"
+            app:checkedTint="@color/colorPrimary"
+            app:uncheckedTint="@color/colorAccent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type your password ..."
+            android:inputType="textPassword"
+            android:layout_toStartOf="@id/toggle"
+            android:layout_centerVertical="true"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,2 @@
+include ':app', ':toggle-icon'
+rootProject.name='ToggleIcon'
