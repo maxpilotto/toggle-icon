@@ -14,7 +14,7 @@ repositories {
 In your modules's `build.gradle`
 ```gradle 
 dependencies {
-    implementation 'com.github.maxpilotto:toggle-icon:1.0'
+    implementation 'com.github.maxpilotto:toggle-icon:$latest_version'
 }
 ```
 
