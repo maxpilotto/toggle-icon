@@ -86,7 +86,11 @@ lint/tmp/
 gen-external-apklibs
 output.json
 
-### Java ###
+# Replacement of .externalNativeBuild directories introduced
+# with Android Studio 3.5.
+.cxx/
+
+### Kotlin ###
 # Compiled class file
 
 # Log file
@@ -109,18 +113,74 @@ output.json
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-### Kotlin ###
-# Compiled class file
+### Linux ###
+*~
 
-# Log file
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
 
-# BlueJ files
+# KDE directory preferences
+.directory
 
-# Mobile Tools for Java (J2ME)
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
 
-# Package Files #
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
 
 ### Gradle ###
 .gradle
@@ -169,7 +229,6 @@ gradle-app.setting
 /*/*/build
 /*/*/production
 *.ipr
-*~
 *.swp
 
 # Android Patch
@@ -202,13 +261,7 @@ obj/
 .idea/uiDesigner.xml
 
 # OS-specific files
-.DS_Store
 .DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
 
 # Legacy Eclipse project files
 .classpath

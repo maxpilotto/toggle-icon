@@ -27,8 +27,6 @@ import androidx.annotation.DrawableRes
 
 /**
  * Image that can be toggled like a checkbox, the toggled values are the icon and the tint
- *
- * Created on 29/08/2019 at 19:15
  */
 class ToggleIcon : ImageView {
     /**
@@ -94,12 +92,16 @@ class ToggleIcon : ImageView {
      */
     var hasRipple: Boolean
         set(value) {
-            if (value){
-                with(TypedValue()){
-                    context.theme.resolveAttribute(R.attr.selectableItemBackgroundBorderless,this,true)
+            if (value) {
+                with(TypedValue()) {
+                    context.theme.resolveAttribute(
+                        R.attr.selectableItemBackgroundBorderless,
+                        this,
+                        true
+                    )
                     setBackgroundResource(resourceId)
                 }
-            }else{
+            } else {
                 background = null
             }
 
@@ -117,34 +119,25 @@ class ToggleIcon : ImageView {
             data
         }
 
-        if (attrs != null) {
-            with(context.obtainStyledAttributes(attrs, R.styleable.ToggleIcon, 0, defStyleAttr)) {
-                checkedTint = getColor(R.styleable.ToggleIcon_checkedTint, primary)
-                uncheckedTint = getColor(R.styleable.ToggleIcon_uncheckedTint, primary)
-                checkedDrawable = context.resources.getDrawable(
-                    getResourceId(
-                        R.styleable.ToggleIcon_checkedResource,
-                        R.drawable.android
-                    )
+        with(context.obtainStyledAttributes(attrs, R.styleable.ToggleIcon, 0, defStyleAttr)) {
+            checkedTint = getColor(R.styleable.ToggleIcon_checkedTint, primary)
+            uncheckedTint = getColor(R.styleable.ToggleIcon_uncheckedTint, primary)
+            checkedDrawable = context.resources.getDrawable(
+                getResourceId(
+                    R.styleable.ToggleIcon_checkedResource,
+                    R.drawable.android
                 )
-                uncheckedDrawable = context.resources.getDrawable(
-                    getResourceId(
-                        R.styleable.ToggleIcon_uncheckedResource,
-                        R.drawable.android
-                    )
+            )
+            uncheckedDrawable = context.resources.getDrawable(
+                getResourceId(
+                    R.styleable.ToggleIcon_uncheckedResource,
+                    R.drawable.android
                 )
-                isChecked = getBoolean(R.styleable.ToggleIcon_checked, false)
-                hasRipple = getBoolean(R.styleable.ToggleIcon_hasRipple,true)
+            )
+            isChecked = getBoolean(R.styleable.ToggleIcon_checked, false)
+            hasRipple = getBoolean(R.styleable.ToggleIcon_hasRipple, true)
 
-                recycle()
-            }
-        } else {
-            checkedTint = primary
-            uncheckedTint = primary
-            checkedDrawable = context.resources.getDrawable(R.drawable.android)
-            uncheckedDrawable = context.resources.getDrawable(R.drawable.android)
-            isChecked = false
-            hasRipple = true
+            recycle()
         }
 
         setOnClickListener {
